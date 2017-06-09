@@ -11,11 +11,11 @@ Module.register("MMM-JEOPARDY", {
         rotateInterval: 5 * 60 * 1000, // New Jeopardy clue rotation.
         useHeader: false,              // true if you want a header
         header: "",
-        maxWidth: "300px",
+        maxWidth: "250px",
         animationSpeed: 3000,          // Object fade in and out speed
         initialLoadDelay: 4250,
         retryDelay: 2500,
-        updateInterval: 60 * 60 * 1000, // 1 hour = 100 clues per call
+        updateInterval: 60 * 60 * 1000, // 1 hour = 60 clues per call
 
     },
 
@@ -34,7 +34,7 @@ Module.register("MMM-JEOPARDY", {
 
         // Set locale.
 	//	this.date = moment(new Date()).format("YYYY-MM-DD");    
-		this.url = "http://jservice.io/api/random?count=100";
+		this.url = "http://jservice.io/api/random?count=60";
 		this.jeopardy = [];
         this.activeItem = 0;
         this.rotateInterval = null;
@@ -67,11 +67,18 @@ Module.register("MMM-JEOPARDY", {
                 this.activeItem = 0;
             }
             var jeopardy = this.jeopardy[jeopardyKeys[this.activeItem]];
-            console.log(this.jeopardy); // For checking
+        //    console.log(this.jeopardy); // For checking
 
 
             var top = document.createElement("div");
             top.classList.add("list-row");
+
+			// Jeopardy Logo from local file
+			var pic = document.createElement("div");
+			var img = document.createElement("img");
+			img.src = "modules/MMM-JEOPARDY/pix/logo300.jpg";		
+			pic.appendChild(img);
+			wrapper.appendChild(pic);
 
             // Category   
             var category = document.createElement("div");
@@ -80,29 +87,29 @@ Module.register("MMM-JEOPARDY", {
             wrapper.appendChild(category);
 			
 			
-			
 			// Value of clue   
             var jeopardyValue = document.createElement("div");
-            jeopardyValue.classList.add("small", "bright");
+            jeopardyValue.classList.add("xsmall", "bright");
 			
-			if (jeopardyValue.value === null) {
-                jeopardyValue.innerHTML = "For: &nbsp" + "$200";
-            } else
+			if (jeopardyValue.value !== null) {
                 jeopardyValue.innerHTML = "For: &nbsp $" + jeopardy.value;
+            } else
+                jeopardyValue.innerHTML = "For: &nbsp" + "$200";
 	            wrapper.appendChild(jeopardyValue);
 
 
-            // The clue
+            // The clue itself
             var jeopardyClue = document.createElement("div");
             jeopardyClue.classList.add("xsmall", "bright");
-            jeopardyClue.innerHTML = "The answer is: &nbsp" + jeopardy.question + ".";
+            jeopardyClue.innerHTML = "The clue is: &nbsp" + jeopardy.question + ".";
             wrapper.appendChild(jeopardyClue);
 
 
             // The answer in the form of a question
             var jeopardyAnswer = document.createElement("div");
-            jeopardyAnswer.classList.add("xsmall", "bright");
-            jeopardyAnswer.innerHTML = "What is: &nbsp" + jeopardy.answer + "?";
+            jeopardyAnswer.classList.add("small", "bright");
+		//  cant get the delay in showing the answer to work
+            jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?";
 
         }
         wrapper.appendChild(jeopardyAnswer);
