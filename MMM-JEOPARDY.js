@@ -8,11 +8,11 @@ Module.register("MMM-JEOPARDY", {
 
     // Module config defaults.
     defaults: {
-        rotateInterval: 5 * 1000, // New Jeopardy clue rotation.
-        useHeader: false, // true if you want a header
+        rotateInterval: 30 * 1000,      // New Jeopardy clue rotation.
+        useHeader: false,               // true if you want a header
         header: "",
         maxWidth: "300px",
-        animationSpeed: 3000, // Object fade in and out speed
+        animationSpeed: 3000,           // Object fade in and out speed
         initialLoadDelay: 4250,
         retryDelay: 2500,
         updateInterval: 60 * 60 * 1000, // 1 hour = 60 clues per call
@@ -29,8 +29,7 @@ Module.register("MMM-JEOPARDY", {
         requiresVersion: "2.1.0",
 
         // Set locale.
-        //    this.date = moment(new Date()).format("YYYY-MM-DD");    
-        this.url = "http://jservice.io/api/random?count=60";
+        this.url = "http://jservice.io/api/random?count=100";
         this.jeopardy = [];
         this.activeItem = 0;
         this.rotateInterval = null;
@@ -67,19 +66,15 @@ Module.register("MMM-JEOPARDY", {
 
             var top = document.createElement("div");
             top.classList.add("list-row");
-
             var pic = document.createElement("div");
             var img = document.createElement("img");
-			
-		//	img.classList.add("photo");
-			
             img.src = "modules/MMM-JEOPARDY/pix/logo1.jpg";
             pic.appendChild(img);
             wrapper.appendChild(pic);
 
             var category = document.createElement("div");
-			var str = jeopardy.category.title;
-			var res = str.toUpperCase();
+            var str = jeopardy.category.title;
+            var res = str.toUpperCase();
             category.classList.add("xsmall", "bright");
             category.innerHTML = "Category: &nbsp" + res;   // jeopardy.category.title;
             wrapper.appendChild(category);
@@ -97,8 +92,7 @@ Module.register("MMM-JEOPARDY", {
             var jeopardyAnswer = document.createElement("div");
             jeopardyAnswer.classList.add("small", "bright");
             setTimeout(function() {
-                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?"
-            }, 10 * 1000);
+                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?" }, 20 * 1000);
             wrapper.appendChild(jeopardyAnswer);
         }
         return wrapper;
