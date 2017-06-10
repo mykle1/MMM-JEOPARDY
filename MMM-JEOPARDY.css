@@ -9,12 +9,12 @@
   text-align: left;           /* Align header text. (left, center, right) */
 }
 
-.MMM-JEOPARDY .small.bright {
-  color: white;               /* Color the JEOPARDY Category. Default is white. */
-  text-align: left;           /* Align the JEOPARDY Category. (left, center, right) */
-}
-
 .MMM-JEOPARDY .xsmall.bright {
   color: white;               /* Color the clue. Default is white. */
   text-align: left;           /* Align the clue. (left, center, right) */
+}
+
+.MMM-JEOPARDY .small.bright {
+  color: yellow;               /* Color the answer. Default is white. */
+  text-align: left;           /* Align the answer. (left, center, right) */
 }
