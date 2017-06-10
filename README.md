@@ -26,16 +26,16 @@ Fast pace. Challenging. Educational. Fun!
 
     {
         module: 'MMM-JEOPARDY',
-        position: 'top_left',              // Works well anywhere
+        position: 'top_left',                  // Works well anywhere
         config: { 
-		    rotateInterval: 1 * 60 * 1000, // New clue Rotation.
-		    useHeader: false,              // true if you want a header
-            header: "",
-		    maxWidth: "250px",             // Stretch or constrain according to region
-		    animationSpeed: 3000,          // New clue fades in and out
-            initialLoadDelay: 4250,
-            retryDelay: 2500,
-		    updateInterval: 60 * 60 * 1000, // 1 call per hour gets 60 new clues
+		rotateInterval: 1 * 60 * 1000, // New clue Rotation.
+		useHeader: false,              // true if you want a header
+		header: "",
+		maxWidth: "250px",             // Stretch or constrain according to region
+		animationSpeed: 3000,          // New clue fades in and out
+		initialLoadDelay: 4250,
+		retryDelay: 2500,
+		updateInterval: 60 * 60 * 1000, // 1 call per hour gets 60 new clues
         }
     },
 	
