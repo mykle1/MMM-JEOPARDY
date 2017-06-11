@@ -32,7 +32,7 @@ Fast pace. Challenging. Educational. Fun!
         position: 'top_left',                  // Works well anywhere
         config: { 
 		    useHeader: false,              // true if you want a header
-            header: "This is Jeopardy!",       // Any text you want
+                header: "This is Jeopardy!",   // Any text you want
 		    maxWidth: "250px",             // Stretch or constrain according to region
 		    animationSpeed: 3000,          // New clue fades in and out
         }
