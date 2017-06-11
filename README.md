@@ -1,6 +1,6 @@
 ## MMM-JEOPARDY
 Spanning more than 40 years, the widely popular game show comes to your Magic Mirror.
-With more than **156,800** clues and answers from the show.
+With more than *156,800* clues and answers from the show.
 
 ## How it works
 
@@ -11,9 +11,12 @@ Fast pace. Challenging. Educational. Fun!
 
 ## Examples
 
-* Annotated .css file included for aligning and coloring text and header.
+* Before answer and after answer appears
 
-![](pix/1.JPG), ![](pix/2.JPG), ![](pix/3.JPG)
+![](pix/1.JPG), ![](pix/6.JPG
+
+* Annotated .css file included for aligning and coloring text and header.
+* Don't want the picture? Hate Alex Trebec? css file will easily remove it.
 
 ## Installation
 
@@ -26,16 +29,12 @@ Fast pace. Challenging. Educational. Fun!
 
     {
         module: 'MMM-JEOPARDY',
-        position: 'top_left',               // Works well anywhere
+        position: 'top_left',              // Works well anywhere
         config: { 
-		rotateInterval: 1 * 60 * 1000, // New clue Rotation.
-		useHeader: false,              // true if you want a header
-		header: "",
-		maxWidth: "250px",             // Stretch or constrain according to region
-		animationSpeed: 3000,          // New clue fades in and out
-		initialLoadDelay: 4250,
-		retryDelay: 2500,
-		updateInterval: 60 * 60 * 1000, // 1 call per hour gets 100 new clues
+		    useHeader: false,              // true if you want a header
+            header: "This is Jeopardy!",   // Any text you want
+		    maxWidth: "250px",             // Stretch or constrain according to region
+		    animationSpeed: 3000,          // New clue fades in and out
         }
     },
 	

@@ -18,3 +18,9 @@
   color: yellow;               /* Color the answer. Default is white. */
   text-align: left;           /* Align the answer. (left, center, right) */
 }
+
+/* Uncomment below if you don't like Alex Trebec and want to remove the picture
+
+.MMM-JEOPARDY .photo {
+  display: none;  /* Align the answer. (left, center, right) */ /*
+} */

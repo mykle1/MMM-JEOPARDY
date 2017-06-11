@@ -10,12 +10,12 @@ Module.register("MMM-JEOPARDY", {
     defaults: {
         rotateInterval: 30 * 1000,      // New Jeopardy clue rotation.
         useHeader: false,               // true if you want a header
-        header: "",
-        maxWidth: "300px",
-        animationSpeed: 3000,           // Object fade in and out speed
+        header: "THIS IS JEOPARDY!",    // Any text you want
+        maxWidth: "250px",
+        animationSpeed: 3000,           // Clue fade in and out speed
         initialLoadDelay: 4250,
         retryDelay: 2500,
-        updateInterval: 60 * 60 * 1000, // 1 hour = 60 clues per call
+        updateInterval: 60 * 60 * 1000, // 1 hour = 100 clues per call
 
     },
 
@@ -66,15 +66,17 @@ Module.register("MMM-JEOPARDY", {
 
             var top = document.createElement("div");
             top.classList.add("list-row");
+
             var pic = document.createElement("div");
             var img = document.createElement("img");
-            img.src = "modules/MMM-JEOPARDY/pix/logo1.jpg";
+			img.classList.add("photo");	
+            img.src = "modules/MMM-JEOPARDY/pix/2.jpg";
             pic.appendChild(img);
             wrapper.appendChild(pic);
 
             var category = document.createElement("div");
-            var str = jeopardy.category.title;
-            var res = str.toUpperCase();
+			var str = jeopardy.category.title;
+			var res = str.toUpperCase();
             category.classList.add("xsmall", "bright");
             category.innerHTML = "Category: &nbsp" + res;   // jeopardy.category.title;
             wrapper.appendChild(category);
@@ -92,7 +94,8 @@ Module.register("MMM-JEOPARDY", {
             var jeopardyAnswer = document.createElement("div");
             jeopardyAnswer.classList.add("small", "bright");
             setTimeout(function() {
-                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?" }, 20 * 1000);
+                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?"
+            }, 20 * 1000);
             wrapper.appendChild(jeopardyAnswer);
         }
         return wrapper;
@@ -102,7 +105,7 @@ Module.register("MMM-JEOPARDY", {
     processJEOPARDY: function(data) {
         this.today = data.Today;
         this.jeopardy = data;
-    //    console.log(this.jeopardy);
+    //  console.log(this.jeopardy); checking my data
         this.loaded = true;
     },
 
