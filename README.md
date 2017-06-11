@@ -13,7 +13,7 @@ Fast pace. Challenging. Educational. Fun!
 
 * Before answer and after answer appears
 
-![](pix/1.JPG), ![](pix/6.JPG
+![](pix/1.JPG), ![](pix/6.JPG)
 
 * Annotated .css file included for aligning and coloring text and header.
 * Don't want the picture? Hate Alex Trebec? css file will easily remove it.
