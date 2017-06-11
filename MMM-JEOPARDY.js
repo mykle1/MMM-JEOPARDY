@@ -94,8 +94,7 @@ Module.register("MMM-JEOPARDY", {
             var jeopardyAnswer = document.createElement("div");
             jeopardyAnswer.classList.add("small", "bright");
             setTimeout(function() {
-                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?"
-            }, 20 * 1000);
+                jeopardyAnswer.innerHTML = "What is " + jeopardy.answer + "?" }, 20 * 1000);
             wrapper.appendChild(jeopardyAnswer);
         }
         return wrapper;
