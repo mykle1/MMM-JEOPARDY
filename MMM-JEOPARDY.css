@@ -19,8 +19,13 @@
   text-align: left;           /* Align the answer. (left, center, right) */
 }
 
+.MMM-JEOPARDY .img {
+	width: 250px;
+	margin-bottom: -20px;
+}
+
 /* Uncomment below if you don't like Alex Trebec and want to remove the picture
 
-.MMM-JEOPARDY .photo {
-  display: none;  /* For no picture/logo */ /*
+.MMM-JEOPARDY .img {
+  display: none;  /* Align the answer. (left, center, right) */ /*
 } */
