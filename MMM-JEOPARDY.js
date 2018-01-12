@@ -100,6 +100,20 @@ Module.register("MMM-JEOPARDY", {
         }
         return wrapper;
     },
+	
+	
+/////  Add this function to the modules you want to control with voice //////
+
+    notificationReceived: function(notification, payload) {
+        if (notification === 'HIDE_JEOPARDY') {
+            this.hide(1000);
+        //    this.updateDom(300);
+        }  else if (notification === 'SHOW_JEOPARDY') {
+            this.show(1000);
+        //   this.updateDom(300);
+        }
+            
+    },
 
 
     processJEOPARDY: function(data) {
