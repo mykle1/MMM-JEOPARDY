@@ -70,7 +70,7 @@ Module.register("MMM-JEOPARDY", {
             var pic = document.createElement("div");
             var img = document.createElement("img");
 			img.classList.add("img");
-            img.src = "modules/MMM-JEOPARDY/pix/2.jpg";
+            img.src = "modules/MMM-JEOPARDY/pix/2.JPG";
             pic.appendChild(img);
             wrapper.appendChild(pic);
 
